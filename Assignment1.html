@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML & CSS Full Page Layout</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #1f2933;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+       .logo img {
+           height: 45px;   
+           width: auto;
+        }
+
+       .social-links a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #38bdf8;              /* light blue on hover */
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 2px;
+        }
+
+
+        /* TOP MENUBAR */
+        nav {
+            background-color: #374151;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+       nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        padding: 6px 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #1f2933;
+            color: #d3d8da;
+            border-radius: 4px;
+        }
+
+
+        /* LAYOUT */
+        .layout {
+            display: flex;
+            min-height: calc(100vh - 120px);
+        }
+
+        /* FULL HEIGHT SIDEBAR */
+       aside {
+            width: 250px;
+            background: linear-gradient(180deg, #111827, #1f2933);
+            padding: 30px 20px;
+            color: white;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        aside ul li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: background 0.3s;
+        }
+
+        aside ul li:hover {
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+
+
+        /* MAIN CONTENT */
+        main {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card-content h4 {
+            margin-bottom: 8px;
+            color: #1f2933;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1f2933;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+ <header>
+     <div class="logo">
+        <img src="Logo.jpg" alt="WebStructure Logo">
+    </div>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/company/hashedbit-innovations/" target="_blank">LinkedIn</a>
+        <a href="https://www.facebook.com/hashedbitinnovations/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/hashedbit?igsh=MXhtdHdha3J0Zjk3ag==" target="_blank">Instagram</a>
+    </div>
+</header>
+
+
+    <!-- TOP MENUBAR -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+   <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside>
+        <ul>
+            <li>Dashboard</li>
+            <li>Calendar</li>
+            <li>Notifications</li>
+            <li>Analytics</li>
+            <li>Bookmarks</li>
+            <li>Settings</li>
+            <li>Profile</li>
+            <li>Logout</li>
+        </ul>
+    </aside>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <div class="cards">
+
+                <div class="card">
+                    <img src="Structural design.png">
+                    <div class="card-content">
+                        <h4>Structured Design</h4>
+                        <p>
+                            This section demonstrates a well-structured webpage layout using HTML and CSS.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="Style.avif">
+                    <div class="card-content">
+                        <h4>Clean Styling</h4>
+                        <p>
+                            Simple and readable CSS styling is used to maintain clarity and consistency.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="Layout.jpg">
+                    <div class="card-content">
+                        <h4>Attractive Layout</h4>
+                        <p>
+                            The layout is designed focusing on usability and structure.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 HTML & CSS Webpage
+    </footer>
+
+</body>
+</html>
